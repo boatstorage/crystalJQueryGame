@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+	<div id="random-number">
+    	
+    </div>
+
+    <div id="images">
+    	<img id= "img1">
+    	<img id= "img2">
+    	<img id= "img3">
+    	<img id= "img4">
+
+    </div>
+
+  
+
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+    
+
+	<script type="text/javascript">
+
+   	$(document).ready(function()) {
+
+   	var count = 0;
+   	var crystalNUmberArray = [];
+   	var sum = "", 
+   	var img1 = crystalNUmberArray[0];
+   	var img2 = crystalNUmberArray[0];
+   	var img3 = crystalNUmberArray[0];
+   	var img4 = crystalNUmberArray[0];
+
+
+ 	function getRandomIntInclusive(min, max) {
+ 		min = Math.ceil(min);
+ 		max = Math.floor(max);
+ 		return Math.floor(Math.random() * (max - min + 1)  + min;
+
+	};
+
+	function generateCrystalNumber() {
+		var crystalGroup = $(".images");
+
+		for (var i = 0; crystalNUmberArray.length < 4; i++){
+		var crystalID = crystalGroup.attr('id', "crystal" + i);
+		var crystalValue = crystalId.attr("value", getRandomIntInclusive(1,12));
+		var crystalNum = crystalValue.attr("value");
+
+		if ($.inArray(crystalNum, crystalNUmberArray) == -1){
+			crystalNUmberArray.push(crystalNum);
+
+		} else {
+			null
+		}
+
+		}
+
+	// var img1 = $("#img1").attr("value", getRandomIntInclusive(1, 12));
+	// var img2 = $("#img2").attr("value", getRandomIntInclusive(1, 12));
+	// var img3 = $("#img3").attr("value", getRandomIntInclusive(1, 12));
+	// var img4 = $("#img4").attr("value", getRandomIntInclusive(1, 12));
+
+
+
+
+	function GetFirstNumber {
+	 var random = $("#random-number").html(getRandomIntInclusive(19, 120));
+
+	}
+
+
+	$('img').click(function()){
+		parseInt($(this))
+		console.log($(this).attr("value"));
+
+	};
+
+	
+ 	}
+</script>
