@@ -14,15 +14,44 @@
 
 <div id="random-number"></div>
 
-<div id="wins-losses-tracker-box"></div>	
+<div class="alert alert-success" role="alert">...</div>
+<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div>
+<div class="alert alert-danger" role="alert">...</div>
+
+
+<div id="wins-losses-tracker-box">
+	<ul class="list-group">
+  		<li class="list-group-item" id="wins">
+   		 <span class="badge">0</span>
+    		Wins
+ 		 </li>
+ 		 <li class="list-group-item" id="Losses">
+   		 <span class="badge">0</span>
+    		Losses
+ 		 </li>
+	</ul>
+</div>	
 
  <div id="images">
-    	<img id= "img1">
-    	<img id= "img2">
-    	<img id= "img3">
-    	<img id= "img4">
-
- </div>
+	 <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <button type="button" class="btn btn-default"><img id="img1" src="images/image1.png" width= "100px" height= "100px"></button>
+	      </a>
+	      <a class="navbar-brand" href="#">
+	         <button type="button" class="btn btn-default"><img id="img2" src="images/image2.png" width= "100px" height= "100px"></button>
+	      </a>
+	      <a class="navbar-brand" href="#">
+	         <button type="button" class="btn btn-default"><img id="img3" src="images/image3.png" width= "100px" height= "100px"></button>
+	      </a>
+	      <a class="navbar-brand" href="#">
+	         <button type="button" class="btn btn-default"><img id="img4" src="images/image4.png" width= "100px" height= "100px"></button>
+	      </a>
+	  </div>
+	</nav> 	
+</div>
 
   
 <div id="score-square">
@@ -44,9 +73,9 @@
    	var crystalNUmberArray = [];
    	var sum = ""; 
    	var img1 = crystalNUmberArray[0];
-   	var img2 = crystalNUmberArray[0];
-   	var img3 = crystalNUmberArray[0];
-   	var img4 = crystalNUmberArray[0];
+   	var img2 = crystalNUmberArray[1];
+   	var img3 = crystalNUmberArray[2];
+   	var img4 = crystalNUmberArray[3];
 
 
  	function getRandomIntInclusive(min, max) {
