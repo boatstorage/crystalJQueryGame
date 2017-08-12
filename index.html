@@ -3,122 +3,172 @@
 <html>
 <head>
 	<title></title>
+
+	<!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<style>
+	body {
+		background-image: url("images/background.jpg");
+
+	}
+	</style>
 </head>
-<body>
+<body >
 
 <h1 class="heading">Crystal Collectors</h1>
 <div  class="directions">
-	<p> sdkjfaskfdjasfj</p>
+	<p> directionbs</p>
 	
 </div>
 
-<div id="random-number"></div>
+<div>
+	<h2>Number to guess:<h2>
+	<span id="random-number"></span> 
+</div>
 
-<div class="alert alert-success" role="alert">...</div>
-<div class="alert alert-info" role="alert">...</div>
-<div class="alert alert-warning" role="alert">...</div>
-<div class="alert alert-danger" role="alert">...</div>
 
+<div id="win-lose"></div>
 
 <div id="wins-losses-tracker-box">
-	<ul class="list-group">
-  		<li class="list-group-item" id="wins">
-   		 <span class="badge">0</span>
-    		Wins
- 		 </li>
- 		 <li class="list-group-item" id="Losses">
-   		 <span class="badge">0</span>
-    		Losses
- 		 </li>
-	</ul>
+	<div>
+        <h3>Wins: </h3>
+        <span id="wins"></span>
+      </div>
+
+      <div>
+        <h3>Losses: </h3>
+        <span id="losses"></span>
+      </div>
 </div>	
 
- <div id="images">
+ <div id="crystals">
 	 <nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="#">
-	        <button type="button" class="btn btn-default"><img id="img1" src="images/image1.png" width= "100px" height= "100px"></button>
+	        <button id="img1" type="button" class="btn btn-default"><img src="images/image1.png" width= "100px" height= "100px"></button>
 	      </a>
 	      <a class="navbar-brand" href="#">
-	         <button type="button" class="btn btn-default"><img id="img2" src="images/image2.png" width= "100px" height= "100px"></button>
+	         <button id="img2" type="button" class="btn btn-default"><img src="images/image2.png" width= "100px" height= "100px"></button>
 	      </a>
 	      <a class="navbar-brand" href="#">
-	         <button type="button" class="btn btn-default"><img id="img3" src="images/image3.png" width= "100px" height= "100px"></button>
+	         <button id="img3" type="button" class="btn btn-default"><img src="images/image3.png" width= "100px" height= "100px"></button>
 	      </a>
 	      <a class="navbar-brand" href="#">
-	         <button type="button" class="btn btn-default"><img id="img4" src="images/image4.png" width= "100px" height= "100px"></button>
+	         <button id="img4" type="button" class="btn btn-default"><img src="images/image4.png" width= "100px" height= "100px"></button>
 	      </a>
 	  </div>
 	</nav> 	
 </div>
 
   
-<div id="score-square">
-</div>
 
-<div id="score-tracker"></div>
+
+	
+      <div>
+        <h3>Your Score is: </h3>
+        <span id="score-tracker"></span>
+      </div>
 
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+ <!--    <script src="assets/javascript/game.js"></script> -->
 
     
 
 	<script type="text/javascript">
 
-   	$(document).ready(function()) {
-
+   	
    	var count = 0;
    	var crystalNUmberArray = [];
-   	var sum = ""; 
-   	var img1 = crystalNUmberArray[0];
-   	var img2 = crystalNUmberArray[1];
-   	var img3 = crystalNUmberArray[2];
-   	var img4 = crystalNUmberArray[3];
-
+   	var crystalNum = ""; 
+   	var randomNum = "";
 
  	function getRandomIntInclusive(min, max) {
  		min = Math.ceil(min);
  		max = Math.floor(max);
- 		return Math.floor(Math.random() * (max - min + 1)  + min;
+ 		return Math.floor(Math.random() * (max - min + 1)  + min);
 
 	};
 
-	function generateCrystalNumber() {
-		var crystalGroup = $(".images");
+	function GetFirstNumber() {
+			randomNum = getRandomIntInclusive(19, 120)
+	  	 	$("#random-number").html(randomNum);
+	  		
 
-		for (var i = 0; crystalNUmberArray.length < 4; i++){
-		var crystalID = crystalGroup.attr('id', "crystal" + i);
-		var crystalValue = crystalId.attr("value", getRandomIntInclusive(1,12));
-		var crystalNum = crystalValue.attr("value");
+	};
+	GetFirstNumber();
+	console.log(randomNum);
 
-		if ($.inArray(crystalNum, crystalNUmberArray) == -1){
+	 
+	 function generateCrystalNumber() {
+
+
+		for (var i = 1; i < 5; i++){
+			var crystalId = $("#img" + i);
+			crystalId.attr("value", getRandomIntInclusive(1,12));
+			var crystalNum = crystalId.attr("value");
 			crystalNUmberArray.push(crystalNum);
-
-		} else {
-			null
-		}
+			crystalNum = crystalNUmberArray[crystalNUmberArray.length -1]; 
+			
 
 		}
-
-
-
-
-	function GetFirstNumber {
-	 var random = $("#random-number").html(getRandomIntInclusive(19, 120));
-
 	}
+	
+	
 
+   	var img1 = crystalNUmberArray[0];
+   	var img2 = crystalNUmberArray[1];
+   	var img3 = crystalNUmberArray[2];
+   	var img4 = crystalNUmberArray[3];
+  
+  	generateCrystalNumber();
 
-	$('img').click(function()){
-		parseInt($(this))
-		console.log($(this).attr("value"));
+	console.log(crystalNUmberArray);
+	console.log(img1);
+	console.log(img2);
+	console.log(img3);
+	console.log(img4);
 
-	};
+		
 
 	
- 	}
+	$(".navbar-brand").append(crystalNum);
+
+	$("#score-tracker").html(count);
+
+	$(".navbar-brand").on("click", function() {
+
+		 var crystalValue = ($(this.children).attr("value"));
+    		crystalValue = parseInt(crystalValue);
+
+		count += crystalValue
+
+	$("#score-tracker").html(count);
+
+
+	if (count === randomNum) {
+    wins += 1;
+    $("#win-lose").html("<h1>YOU WIN!</h1>");
+    $("#wins").html("<h3>" + wins + "</h3>");
+  	}
+
+	else if (count >= randomNum) {
+    losses += 1;
+    $("#win-lose").html("<h2> you lose </h2>");
+    $("#losses").html("<h3>" + losses + "</h3>");
+  }
+
+console.log(count);
+});
+
+
+
+
+
+	
+ 	
 </script>
 </body>
 </html>
