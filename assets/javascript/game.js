@@ -40,7 +40,8 @@
 	
 	function startGame(){
   	count = 0;
-  	$("#win-lose").html("<h2>  </h2>")
+  	$("#win-lose").html("");
+  
 
 
    	var img1 = crystalNUmberArray[0];
@@ -75,26 +76,31 @@
 	if (count === randomNum) {
     wins += 1;
     $("#win-lose").html("<h1>YOU WIN!</h1>");
+    $("#win-lose").append("<i></i>");
+    $("#win-lose").addClass("fa fa-spin fa-3x fa-fw");   
     $("#wins").html("<h3>" + wins + "</h3>");
     $(".navbar-brand").unbind("click");
     setTimeout(function() {
-          startGame();
-        }, 1500);
+    	  $("#win-lose").removeClass("fa fa-spin fa-3x fa-fw");   
+            startGame();
+        }, 5000);
 	}
 
 	else if (count >= randomNum) {
     losses += 1;
-    $("#win-lose").html("<h2> you lose </h2>");
+    $("#win-lose").html("<h2> Try again </h2>");
+    $("#win-lose").append("<i></i>");
+    $("#win-lose").addClass("fa fa-spin fa-3x fa-fw"); 
     $("#losses").html("<h3>" + losses + "</h3>");
     $(".navbar-brand").unbind("click");
     setTimeout(function() {
+    		$("#win-lose").removeClass("fa fa-spin fa-3x fa-fw"); 
           startGame();
-        }, 1500);
+        }, 3000);
   } else {
 
   }
 
-console.log(count);
 });
 
 }

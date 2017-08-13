@@ -6,40 +6,50 @@
 
 	<!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	<script src="https://use.fontawesome.com/c41336e3f8.js"></script>
 	<style>
-	body {
+		body {
 		background-image: url("images/background.jpg");
-
-	}
+		font-family: 'videophreak';
+		}
+		#wrapper {
+			width: 70%;
+			margin: 0 auto;
+			text-align: center;
+		}
 	</style>
 </head>
-<body >
-
+<body>
+<div id="wrapper">
 <h1 class="heading">Crystal Collectors</h1>
 <div  class="directions">
-	<p> directionbs</p>
+	<p>You will be given a random number at the start of the game.</p>
+	<p>There are four crytsals below. By clicking you will add 
+	a specific amount of points to your total score</p>
+	<p> you win the game by matching your total score to random number, you lose the game if your total score goes about the random number</p>
+	<p>The value of each crystal is hidden from you until you click on it.</p>
+	<p>Each time when the game starts, the game will change the values of each crystal.</p>
 	
 </div>
 
 <div>
-	<h2>Number to guess:<h2>
+	<h3>Number to guess:<h3>
 	<span id="random-number"></span> 
 </div>
 
 
 <div id="win-lose">
-	<h2> Good luck! </h2>
+	<h3> Good luck! </h3>
 </div>
 
 <!-- <div id="wins-losses-tracker-box"> -->
 	<div>
-        <h3>Wins: </h3>
+        <h4>Wins: </h4>
         <span id="wins"></span>
       </div>
 
       <div>
-        <h3>Losses: </h3>
+        <h4>Losses: </h4>
         <span id="losses"></span>
       </div>
 <!-- </div> -->	
@@ -79,7 +89,7 @@
 
     
 
-	
+</div>	
 </body>
 </html>
 
